@@ -1,0 +1,138 @@
+@font-face { 
+    font-family: 'Oswald'; 
+    src: url('fonts/Oswald/Oswald-Regular.ttf');
+}
+@font-face {
+    font-family: 'Open Sans'; 
+    src: url("fonts/Open_Sans/OpenSans-Light.ttf");
+}
+
+body {
+    margin:0;
+    background:#003366;
+}
+
+#web-header {
+    min-height:400px;
+    background-image: url(../../images/img-header.png);
+    background-repeat: false;
+    background-position: center;
+}
+
+#web-header img {
+    padding-top: 20px;
+}
+
+#menu-header p {
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 150%;
+    padding-top: 0;
+}
+
+#menu-header img {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+#menu-header img:hover {
+    opacity: 0.4;
+}
+
+#icon-footer img {
+    opacity: 1;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+}
+
+#icon-footer img:hover {
+    opacity: 0.4;
+}
+
+.supertitulo, .titulo, .subtitulo, .parrafo, .diminuto {
+    font-family: 'Open Sans';
+    color:#003366;
+    font-weight: bold;
+}
+
+.supertitulo {
+    font-size: 375%;
+}
+
+.titulo {
+    font-size: 300%;
+}
+
+.subtitulo {
+    font-size: 200%;
+}
+
+.parrafo {
+    font-size: 150%; 
+}
+
+.diminuto {
+    font-size: 100%;
+}
+
+.modal-body {
+    background-image: url('../../images/fondo-acddes.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #003366;
+}
+
+.body-temp {
+    text-align: center;
+}
+
+.arco-iris {
+    height: 15px;
+}
+
+.celeste {
+    background: #4377DD;
+    color: #4377DD;
+}
+
+.naranja {
+    background: #FE8439;
+    color: #FE8439;
+}
+
+.verde {
+    background: #29C57C;
+    color: #29C57C;
+}
+
+.amarillo {
+    background: #DADB25;
+    color: #DADB25;
+}
+
+.rosado {
+    background: #FF59AD;
+    color: #FF59AD;
+}
+
+.blanco {
+    background:white;
+    color: #003366;
+}
+
+.azul {
+    background: #003366;
+    color:white;
+}
+
+/* * * * * * * * * NEWS * * * * * * */
+#news-header {
+    height: 75px;
+    background:#003366;
+}
+#news-header img {
+    max-height: 65px;
+    padding-top: 5px;
+}
