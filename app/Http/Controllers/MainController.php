@@ -8,4 +8,9 @@ class MainController extends Controller {
         return view('inicio');
     }
 
+    public function devocionales()
+    {
+        return view('home');
+    }
+
 }

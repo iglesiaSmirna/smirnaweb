@@ -8,12 +8,13 @@
     <link rel="shortcut icon" href="images/myicon.ico" type="image/x-icon">
     <link rel="icon" href="images/myicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" >
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    {!! Html::style('assets/font-awesome/css/font-awesome.min.css') !!}
+    {!! Html::style('assets/bootstrap/css/bootstrap.css') !!}
+    {!! Html::style('assets/css/style.css') !!}
 
     <script type="text/javascript" src="assets/js/jquery.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <div class="container">

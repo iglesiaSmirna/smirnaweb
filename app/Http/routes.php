@@ -19,3 +19,4 @@ Route::controllers([
 ]);
 */
 Route::get('/', 'MainController@index');
+Route::get('devocionales','MainController@devocionales');
