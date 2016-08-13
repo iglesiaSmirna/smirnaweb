@@ -1,11 +1,18 @@
-<?php namespace App\Http\Controllers;
+<?php 
+namespace App\Http\Controllers;
 
-class MainController extends Controller {
+use Illuminate\Http\Request;
+
+class MainController extends Controller
+{
 
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('inicio');
+        $idioma = $request->lang;
+        $eng = (isset($idioma)&&$idioma=="en") ? true : false;
+
+        return view('inicio',get_defined_vars());
     }
 
     public function devocionales()

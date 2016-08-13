@@ -28,26 +28,42 @@
         <div class="col-md-3">
             <a href="#index-vision">
                 <img src="images/new_icon01.png" alt="vision" class="img-responsive">
-                <br><p>Visi&oacute;n</p>
+                @if($eng)
+                    <br><p>Vision</p>
+                @else
+                    <br><p>Visi&oacute;n</p>
+                @endif
             </a>
 
         </div>
         <div class="col-md-3">
             <a href="../news">
                 <img src="images/new_icon02.png" alt="noticias" class="img-responsive">
-                <br><p>Noticias</p>
+                @if($eng)
+                    <br><p>News</p>
+                @else
+                    <br><p>Noticias</p>
+                @endif
             </a>
         </div>
         <div class="col-md-3">
             <a href="#">
                 <img src="images/new_icon03.png" alt="devocionales" class="img-responsive">
-                <br><p>Devocionales</p>
+                @if($eng)
+                    <br><p>Devotionals</p>
+                @else
+                    <br><p>Devocionales</p>
+                @endif
             </a>
         </div>
         <div class="col-md-3">
-            <a href="#" class="link-contacto">
+            <a class="link-contacto">
                 <img src="images/new_icon04.png" alt="oracion" class="img-responsive">
-                <br><p>Oraci&oacute;n</p>
+                @if($eng)
+                    <br><p>Prayer</p>
+                @else
+                    <br><p>Oraci&oacute;n</p>
+                @endif
             </a>
         </div>
     </div>
@@ -276,7 +292,7 @@
                     </a>
                 </div>
                 <div class="col-md-2">
-                    <a href="#" class="link-contacto">
+                    <a class="link-contacto">
                         <img src="images/icon_redes4.png" alt="" class="img-responsive">
                     </a>
                 </div>
@@ -371,7 +387,7 @@
     $(document).on('click','.smedia',function(){
         $('.body-cont').hide();
         $('.modal-title').html('');
-        $('.body-temp').show().html('<img src="../images/social_icons.png" alt="" class="img-responsive">');
+        $('.body-temp').show().html('<img src="images/social_icons.png" alt="" class="img-responsive">');
         $('.modal-footer').html('');
         $('#mimodal').modal('show');
     });
