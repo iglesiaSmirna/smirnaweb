@@ -2,7 +2,9 @@
 
 Route::group(['middleware' => ['lang']], function () {
     Route::get('/', 'MainController@index');
-    Route::get('devocionales','MainController@devocionales');
+    Route::any('/{seccion}/{yy}/{titulo}', 'MainController@redirectUrl');
+
+    //Route::get('devocionales','MainController@devocionales');
 });
 
 

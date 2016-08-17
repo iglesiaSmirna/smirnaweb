@@ -337,7 +337,7 @@
                         </div>
                     @endif
                     <br>
-                    {!! Html::link('#index-vision', 'VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
+                    {!! Html::link(url('/devocional/2016/mi-devocional?lang='.((isset($eng)&&$eng)?'en':'es')), 'VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
                     <br><br>
                 </div>
             </div>
@@ -364,7 +364,7 @@
                         </div>
                     @endif
                     <br>
-                    {!! Form::button('VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
+                    {!! Html::link(url('/estudio/2016/mi-estudio?lang='.((isset($eng)&&$eng)?'en':'es')), 'VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
                     <br><br>
                 </div>
             </div>
@@ -391,7 +391,7 @@
                         </div>
                     @endif
                     <br>
-                    {!! Form::button('VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
+                    {!! Html::link(url('/capsula/2016/mi-capsula?lang='.((isset($eng)&&$eng)?'en':'es')), 'VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
                     <br><br>
                 </div>
             </div>

@@ -23,9 +23,23 @@ class MainController extends Controller
         return view('main',get_defined_vars());
     }
 
-    public function devocionales()
+    public function redirectUrl (Request $request)
     {
-        return view('home');
+        $seccion = $request->seccion;
+        $yy      = $request->yy;
+        $titulo  = $request->titulo;
+
+        if ($seccion != '' && $yy != '' && $titulo != '')
+        {
+            $idioma = $request->lang;
+            $eng = (isset($idioma)&&$idioma=="en") ? true : false;
+            dd($seccion, $yy, $titulo, $eng);
+        }
+        else
+        {
+            // LA SECCION NO ESTA DISPONIBLE...
+            return redirect(url('/'));
+        }
     }
 
     public function detect()
