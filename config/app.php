@@ -197,6 +197,7 @@ return [
 
 		'Form' => 'Collective\Html\FormFacade',
 		'Html' => 'Collective\Html\HtmlFacade',
+		'BrowserDetect' => 'hisorange\BrowserDetect\Facade\Parser',
 
 	],
 

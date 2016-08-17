@@ -12,8 +12,8 @@
     {!! Html::style('assets/bootstrap/css/bootstrap.css') !!}
     {!! Html::style('assets/css/style.css') !!}
 
-    <script type="text/javascript" src="assets/js/jquery.js"></script>
-    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+    {!! Html::script('assets/js/jquery.js') !!}
+    {!! Html::script('assets/bootstrap/js/bootstrap.min.js') !!}
 
 </head>
 <body>
@@ -107,7 +107,6 @@
                     <div class="item">
                         <img src="images/carrousel02.png" alt="Flower">
                     </div>
-
                     <div class="item">
                         <img src="images/carrousel03.png" alt="dafad">
                     </div>
