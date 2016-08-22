@@ -166,7 +166,7 @@ body {
     background-color: #003366;
 }
 
-.carousel-inner {
+#carousel-frases .carousel-inner {
     height: 280px;
 }
 

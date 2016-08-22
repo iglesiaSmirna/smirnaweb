@@ -389,7 +389,7 @@
     </div>
 
     {{-- FRASES DE LIDERAZGO --}}
-    <div class="row" style="background-color: #c4fff3">
+    <div class="row blanco">
         <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
             <hr>
             <div class="titulo">FRASE DE LIDERAZGO</div>
@@ -433,7 +433,7 @@
     </div>
 
     {{-- BARRA COLORES --}}
-    <div class="row" style="background-color: #c4fff3;">
+    <div class="row" style="background-color: white;">
         <br><br>
         <div class="col-md-4 col-sm-4 col-xs-4 arco-iris celeste"></div>
         <div class="col-md-2 col-sm-2 col-xs-2 arco-iris naranja"></div>
@@ -505,7 +505,26 @@
             </div>
             <br>
         </div>
-
+        <div class="col-md-3 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 redes-footer">
+            <br><p style="color: #4377DD; font-weight: bold">{!! (isset($eng)&&$eng) ? 'MENU' : 'MEN&Uacute; PRINCIPAL' !!}</p><br>
+            <div class="row">
+                <div class="col-md-12 col-sm-3 col-xs-12" style="margin-bottom: 25px;">
+                    <a href="#index-vision">
+                        {!!($eng) ? 'VISION' : 'VISI&Oacute;N'!!}
+                     </a>
+                </div>
+                <div class="col-md-12 col-sm-3 col-xs-12" style="margin-bottom: 25px;">
+                    <a href="#index-articulos">
+                        {!!($eng) ? 'ARTICLES' : 'ART&Iacute;CULOS'!!}
+                     </a>
+                </div>
+                <div class="col-md-12 col-sm-6 col-xs-12" style="margin-bottom: 25px;">
+                    <a href="">
+                        {!! ($eng) ? 'LOG IN' : 'INICIAR SESI&Oacute;N' !!}
+                    </a>
+                </div>
+            </div>
+         </div>
     </div>
 @stop
 
