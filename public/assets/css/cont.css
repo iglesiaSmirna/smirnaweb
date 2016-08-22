@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/Oswald/Oswald-Regular.ttf');
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/Open_Sans/OpenSans-Light.ttf');
+}
+
+body {
+    margin:0;
+}
+
+.supertitulo, .titulo, .subtitulo, .parrafo, .diminuto {
+    font-family: 'Open Sans';
+}
+
+.supertitulo {
+    font-family: 'Oswald';
+    font-size: 350%;
+}
+
+.titulo {
+    font-size: 300%;
+}
+
+.subtitulo {
+    font-size: 200%;
+}
+
+.parrafo {
+    font-size: 150%;
+}
+
+.diminuto {
+    font-size: 90%;
+}
+
+.modal-body {
+    background-image: url('../../images/fondo-acddes.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #003366;
+}
+
+.arco-iris {
+    height: 15px;
+}
+
+.celeste {
+    background: #4377DD;
+    color: #4377DD;
+}
+
+.naranja {
+    background: #FE8439;
+    color: #FE8439;
+}
+
+.verde {
+    background: #29C57C;
+    color: #29C57C;
+}
+
+.amarillo {
+    background: #DADB25;
+    color: #DADB25;
+}
+
+.rosado {
+    background: #FF59AD;
+    color: #FF59AD;
+}
+
+.blanco {
+    background:white;
+    color: #003366;
+}
+
+.azul {
+    background: #003366;
+    color:white;
+}
+
+#header-section {
+    font-family: 'Open Sans';
+    font-size: 140%;
+    color: white;
+}
+
+#header-section a{
+    color: white;
+}
+
+#header-section a:link {
+    color: white;
+    text-decoration: none;
+}
+
+#header-section a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+#header-section a:hover{
+    color: #4377DD;
+    text-decoration: none;
+}
+
+#header-section a:active{
+    color: white;
+    text-decoration: none;
+}
+
+#compartir {
+    font-size: 120%;
+}
+
+#compartir-pdf a{
+    color: red;
+}
+
+#compartir-pdf a:link {
+    color: red;
+    text-decoration: none;
+}
+
+#compartir-pdf a:visited{
+    color: red;
+    text-decoration: none;
+}
+
+#compartir-pdf a:hover{
+    color: darkred;
+    text-decoration: none;
+}
+
+#compartir-pdf a:active{
+    color: red;
+    text-decoration: none;
+}
+
+/* Responsive Screen */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    #web-header {
+        min-height:250px;
+        background-image: url(../../images/img-header.png);
+        background-position: center;
+    }
+
+    .supertitulo, .titulo, .subtitulo, .parrafo, .diminuto {
+        font-family: 'Open Sans';
+    }
+
+    .supertitulo {
+        font-size: 280%;
+    }
+
+    .titulo {
+        font-size: 240%;
+    }
+
+    .subtitulo {
+        font-size: 185%;
+    }
+
+    .parrafo {
+        font-size: 125%;
+    }
+
+    .diminuto {
+        font-size: 82%;
+    }
+
+    #compartir {
+        font-size: 105%;
+    }
+}
+
+@media screen and (max-width: 360px) and (orientation: portrait){
+    #web-header {
+        min-height:200px;
+        background-image: url(../../images/img-header.png);
+        background-position: center;
+    }
+
+    .supertitulo, .titulo, .subtitulo, .parrafo, .diminuto {
+        font-family: 'Open Sans';
+    }
+
+    .supertitulo {
+        font-size: 240%;
+    }
+
+    .titulo {
+        font-size: 190%;
+    }
+
+    .subtitulo {
+        font-size: 166%;
+    }
+
+    .parrafo {
+        font-size: 100%;
+    }
+
+    .diminuto {
+        font-size: 75%;
+    }
+
+    #compartir {
+        font-size: 90%;
+    }
+}

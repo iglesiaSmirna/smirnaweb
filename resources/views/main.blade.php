@@ -139,16 +139,6 @@
                     </div>
                 </div>
 
-                <!-- Left and right controls
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                -->
             </div>
         </div>
     </div>
@@ -398,8 +388,52 @@
         </div>
     </div>
 
+    {{-- FRASES DE LIDERAZGO --}}
+    <div class="row" style="background-color: #c4fff3">
+        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+            <hr>
+            <div class="titulo">FRASE DE LIDERAZGO</div>
+            <div id="carousel-frases" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-frases" data-slide-to="0" class="active" style="border-color: #003366;"></li>
+                    <li data-target="#carousel-frases" data-slide-to="1" style="border-color: #003366;"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active" style="text-align: center;">
+                        <br>
+                        <div class="div-frase">
+                        @if(isset($eng)&&$eng)
+                            <div class="subtitulo">El liderazgo es una decisión que usted toma, no un lugar donde usted se sienta.</div>
+                            <div class="parrafo">John C. Maxwell</div>
+                        @else
+                            <div class="subtitulo">El liderazgo es una decisión que usted toma, no un lugar donde usted se sienta.</div>
+                            <div class="parrafo">John C. Maxwell</div>
+                        @endif
+                        </div>
+                    </div>
+                    <div class="item" style="text-align: center;">
+                        <br>
+                        <div class="div-frase">
+                        @if(isset($eng)&&$eng)
+                            <div class="subtitulo">La verdadera medida de liderazgo es la Influencia</div>
+                            <div class="parrafo">John C. Maxwell</div>
+                        @else
+                            <div class="subtitulo">La verdadera medida de liderazgo es la Influencia</div>
+                            <div class="parrafo">John C. Maxwell</div>
+                        @endif
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     {{-- BARRA COLORES --}}
-    <div class="row" style="background-color: white;">
+    <div class="row" style="background-color: #c4fff3;">
         <br><br>
         <div class="col-md-4 col-sm-4 col-xs-4 arco-iris celeste"></div>
         <div class="col-md-2 col-sm-2 col-xs-2 arco-iris naranja"></div>
@@ -472,26 +506,6 @@
             <br>
         </div>
 
-        <div class="col-md-3 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 redes-footer">
-            <br><p style="color: #4377DD; font-weight: bold">{!! (isset($eng)&&$eng) ? 'MENU' : 'MEN&Uacute; PRINCIPAL' !!}</p><br>
-            <div class="row">
-                <div class="col-md-12 col-sm-3 col-xs-12" style="margin-bottom: 25px;">
-                    <a href="#index-vision">
-                        {!!($eng) ? 'VISION' : 'VISI&Oacute;N'!!}
-                    </a>
-                </div>
-                <div class="col-md-12 col-sm-3 col-xs-12" style="margin-bottom: 25px;">
-                    <a href="#index-articulos">
-                        {!!($eng) ? 'ARTICLES' : 'ART&Iacute;CULOS'!!}
-                    </a>
-                </div>
-                <div class="col-md-12 col-sm-6 col-xs-12" style="margin-bottom: 25px;">
-                    <a href="">
-                        {!! ($eng) ? 'LOG IN' : 'INICIAR SESI&Oacute;N' !!}
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 @stop
 
@@ -504,6 +518,16 @@
         $('a').click(function(){
             var mihref = $(this).attr('href');
             $('html, body').animate({ scrollTop : $( mihref ).offset().top }, 'slow');
+        });
+
+        navegador = "{!! $navegador !!}";
+        $(document).ready(function(){
+            if(window.Touch) {
+                if (navegador=='SAFARI')
+                {
+                    $('#change-language').hide();
+                }
+            }
         });
     </script>
 @stop

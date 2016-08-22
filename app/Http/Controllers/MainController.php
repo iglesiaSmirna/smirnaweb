@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -40,6 +41,29 @@ class MainController extends Controller
             // LA SECCION NO ESTA DISPONIBLE...
             return redirect(url('/'));
         }
+    }
+
+    public function download(Request $request)
+    {
+        $idioma = $request->lang;
+        $eng = (isset($idioma)&&$idioma=="en") ? true : false;
+
+        $pagTitle = 'English';
+        $tituloPag = 'Spanish';
+        $isCont = true;
+        $isWeb  = true;
+
+        $titulo = 'Título en español...';
+        $tittle = 'Título en ingles...';
+
+        return view('layout.plantilla',get_defined_vars());
+    }
+
+    public function pruebadb ()
+    {
+        $query = DB::table('cat_secciones')->get();
+        dd($query);
+        return 'wow';
     }
 
     public function detect()

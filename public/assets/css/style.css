@@ -158,6 +158,29 @@ body {
     text-decoration: none;
 }
 
+#carousel-frases .carousel-indicators li{
+    background-color: white;
+}
+
+#carousel-frases .carousel-indicators .active {
+    background-color: #003366;
+}
+
+.carousel-inner {
+    height: 280px;
+}
+
+.div-frase {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid;
+    border-top: solid;
+    border-color: #003366;
+}
+
+
+
+
 /* * * * * * * * * NEWS * * * * * * */
 #news-header {
     height: 75px;

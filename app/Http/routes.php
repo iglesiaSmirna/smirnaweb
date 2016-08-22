@@ -1,10 +1,12 @@
 <?php
 
 Route::group(['middleware' => ['lang']], function () {
-    Route::get('/', 'MainController@index');
-    Route::any('/{seccion}/{yy}/{titulo}', 'MainController@redirectUrl');
+    Route::get ('/', 'MainController@index');
+    Route::any ('/{seccion}/{yy}/{titulo}', 'MainController@redirectUrl');
+    Route::any ('/download/{seccion}/{yy}/{titulo}','MainController@download');
+    Route::get ('/plantilla','MainController@download');
 
-    //Route::get('devocionales','MainController@devocionales');
+    Route::get ('/pruebadb','MainController@pruebadb');
 });
 
 

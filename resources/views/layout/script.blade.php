@@ -21,16 +21,3 @@
     ga('create', 'UA-59961295-2', 'auto');
     ga('send', 'pageview');
 </script>
-
-{{-- DESHABILITAR LENGUAJES EN SAFARI TOUCH --}}
-<script>
-    navegador = "{!! $navegador !!}";
-    $(document).ready(function(){
-        if(window.Touch) {
-            if (navegador=='SAFARI')
-            {
-                $('#change-language').hide();
-            }
-        }
-    });
-</script>

@@ -8,5 +8,5 @@
 
 {{-- ESTILOS PARA PAGINAS DE CONTENIDO --}}
 @if(isset($isCont)&&$isCont)
-
+    {!! Html::style('assets/css/cont.css') !!}
 @endif
