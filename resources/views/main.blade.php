@@ -480,7 +480,7 @@
             </div>
             <hr>
             <div class="row redes-footer">
-                <a href="">
+                <a href="#contacto" class="link-contacto">
                     <div class="col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
                         {!! Html::image('images/icon_oracion.png', 'oracion', array('class' => 'img-responsive', 'style'=>'max-height: 35px; right: 0; position: absolute;')) !!}
                     </div>
@@ -526,6 +526,68 @@
             </div>
          </div>
     </div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="mimodal">
+        <div class="modal-dialog modal-lg">
+            <form id="form_mail">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title parrafo">
+                            <i class="fa fa-pencil-square" aria-hidden="true"></i> Peticiones de Oraci&oacute;n
+                        </h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="body-temp"></div>
+                        <div class="body-cont">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="parrafo" style="text-align: justify;">Nuestra confianza est&aacute; en Dios y creemos que &Eacute;l responder&aacute; a nuestras peticiones. Estamos interesados en ti y en tus necesidades. Env&iacute;a tu petici&oacute;n y junto a un equipo de oraci&oacute;n estaremos intercediendo por ella.</div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label for="nombre">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba su nombre" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label for="emai">Correo</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Cuenta de correo electr&oacute;nico" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="telefono">Tel&eacute;fono</label>
+                                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese n&uacute;mero telef&oacute;nico">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label for="peticion">Petici&oacute;n</label>
+                                        <textarea class="form-control" rows="5" id="peticion" name="peticion" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><h5><i class="fa fa-times-circle" aria-hidden="true"></i> Cancelar</h5></button>
+                        <button type="submit" class="btn btn-primary"><h5><i class="fa fa-envelope" aria-hidden="true"></i> Enviar</h5></button>
+                    </div>
+                </div><!-- /.modal-content -->
+                <input type="hidden" id="token" name="_token" value="{!! csrf_token() !!}">
+            </form>
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 @stop
 
 @section('js')
@@ -548,5 +610,53 @@
                 }
             }
         });
+
+        $(document).on('click','.link-contacto',function(){
+            $("#form_mail").trigger('reset');
+            $('.body-cont').show();
+            $('.body-temp').hide();
+            btn = boton_peticion();
+            $('.modal-footer').html(btn);
+            $('#mimodal').modal({
+                show: true,
+                backdrop: false
+            });
+        });
+
+        $('#form_mail').submit(function(e){
+            e.preventDefault();
+
+            $.ajax({
+                type:'POST',
+                url:'set/peticion',
+                data: $("#form_mail").serialize(),
+                beforeSend: function() {
+                    $('.body-cont').hide();
+                    $('.body-temp').show().html('<br><br><i class="fa fa-spinner fa-spin fa-4x"></i><br><h3>Estamos procesando su solicitud...</h3><br>');
+                }, error: function() {
+                    $('.body-temp').html('<br><br><i class="fa fa-exclamation-circle fa-4x"></i><h3>Error de conexi&oacute;n. No se pudo enviar el mensaje.');
+                    $('.modal-footer').html('<button type="button" class="btn btn-default" data-dismiss="modal"><h5><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Regresar</h5></button>');
+                }, success: function(response) {
+                    if (response=='ok') {
+                        $('.body-temp').html('<br><br><i class="fa fa-check-circle fa-4x"></i><h3>El mensaje fue enviado con &eacute;xito');
+                        $('.modal-footer').html('<button type="button" class="btn btn-default" data-dismiss="modal"><h5><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Regresar</h5></button>');
+                    } else {
+                        $('.body-temp').html('<br><br><i class="fa fa-exclamation-circle fa-4x"></i><h3>Hubo un problema al enviar el mensaje. '+response);
+                        $('.modal-footer').html('<button type="button" class="btn btn-default" data-dismiss="modal"><h5><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Regresar</h5></button>');
+                    }
+                }
+            }); // Fin del ajax
+        });
+
+        function boton_peticion()
+        {
+            html = '';
+
+            html = html + '<button type="button" class="btn btn-default" data-dismiss="modal">';
+            html = html + '<h5><i class="fa fa-times-circle" aria-hidden="true"></i> Cancelar</h5></button>';
+            html = html + '<button type="submit" class="btn btn-primary">'
+            html = html + '<h5><i class="fa fa-envelope" aria-hidden="true"></i> Enviar</h5></button>'
+            return html;
+        }
     </script>
 @stop

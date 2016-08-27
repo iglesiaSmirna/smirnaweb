@@ -9,4 +9,5 @@
 {{-- ESTILOS PARA PAGINAS DE CONTENIDO --}}
 @if(isset($isCont)&&$isCont)
     {!! Html::style('assets/css/cont.css') !!}
+    {!! Html::style('assets/datatable/css/dataTables.bootstrap.min.css') !!}
 @endif

@@ -8,7 +8,8 @@
 
 {{-- SCRIPTS PARA PAGINA PRINCIPAL --}}
 @if(isset($isCont)&&$isCont)
-
+    {!! Html::script('assets/datatable/js/jquery.dataTables.min.js') !!}
+    {!! Html::script('assets/datatable/js/dataTables.bootstrap.min.js') !!}
 @endif
 
 {{-- GOOGLE ANALITYCS --}}
@@ -20,4 +21,4 @@
 
     ga('create', 'UA-59961295-2', 'auto');
     ga('send', 'pageview');
-</script>
+</scr   ipt>

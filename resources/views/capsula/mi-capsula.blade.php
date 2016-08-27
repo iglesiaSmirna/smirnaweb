@@ -1,24 +1,23 @@
 @extends('layout.master')
 
 @section('contenido')
-    @if(isset($isWeb)&&$isWeb)
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-    @endif
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
     @if(isset($isWeb)&&$isWeb)
         <div class="row azul" id="header-section">
-            <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12" style="padding-top:12px; padding-bottom: 12px;">
+            <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-5" style="padding-top:12px; padding-bottom: 12px;">
                 {!! Html::image('images/logo_blanco.png', 'iglesia smirna', array('class' => 'img-responsive')) !!}
             </div>
 
-            <div class="col-md-2 col-md-offset-5 col-sm-3 col-sm-offset-3 col-xs-12" style="text-align: right; padding-top:40px; padding-bottom: 10px">
-                <a href="{!! url('/')!!}{!! (isset($eng)&&$eng) ? '?lang=en' : '?lang=es' !!} ">
+            <div class="col-md-2 col-md-offset-5 col-sm-3 col-sm-offset-3 col-xs-5 col-xs-offset-2" style="text-align: right; padding-top:40px; padding-bottom: 10px">
+                <a href="{!! url('/'.(isset($eng)&&$eng)?'?lang=en':'?lang=es') !!}">
                     <div class="parrafo"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> {!! (isset($eng)&&$eng) ? 'HOME' : 'INICIO' !!}</div>
                 </a>
             </div>
@@ -26,22 +25,22 @@
     @endif
     {{-- TITULO E IMAGEN--}}
     <div class="row">
-        {!! (isset($isWeb)&&$isWeb) ? '<br>' : '' !!}
-        <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 blanco {!! (isset($isWeb)&&$isWeb) ? 'supertitulo' : 'titulo' !!}" style="text-align: center;">
+        <br>
+        <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 blanco supertitulo" style="text-align: center;">
             {!! (isset($eng)&&$eng) ? $articulo->tittle : $articulo->titulo !!}
         </div>
-        <div class="col-md-5 col-sm-5 col-xs-12">
+        <div class="col-md-5 col-sm-5 col-xs-8 col-xs-offset-2">
             {!! Html::image('images/devocional/main.jpg', 'Alcanzar', array('class' => 'img-responsive')) !!}
         </div>
     </div>
     {{-- CONTENIDO--}}
     <div class="row">
-        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 {!! (isset($isWeb)&&$isWeb) ? 'parrafo' : 'diminuto' !!} blanco" style="text-align: justify">
+        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 parrafo blanco">
             <hr>
             @if(isset($eng)&&$eng)
-                Contenido inglés...
+                Contenido en inglés...
             @else
-                Contenido español...
+                Contenido en español...
             @endif
         </div>
     </div>

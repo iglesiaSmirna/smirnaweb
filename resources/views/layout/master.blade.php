@@ -11,7 +11,7 @@
     <link rel="icon" href="{!! asset('images/favicon.ico')!!}" type="image/x-icon">
 
     <title>
-        {!! (isset($eng)&&$eng) ? $pagTitle : $tituloPag !!}
+        Iglesia Smirna | {!! (isset($eng)&&$eng) ? $pagTitle : $tituloPag !!}
     </title>
 
 @section('css')
@@ -25,8 +25,9 @@
         @show
 
         {{-- footer --}}
+    @if(isset($isWeb)&&$isWeb)
         <div class="row" style="background-color: #002244;">
-            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-2">
+            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
                 <br><br>
                 <div class="diminuto" style="color: white;">
                     &reg; Asamblea de Dios Smirna. 2016 &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -35,8 +36,17 @@
                 <br><br>
             </div>
         </div>
+    @else
+        <div class="row" style="background-color: white;">
+            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+                <hr>
+                <h3 class="{!! (isset($isWeb)&&$isWeb) ? 'parrafo' : 'diminuto' !!}" style="color: #003366; text-align: center;">www.iglesiaSmirna.org</h3>
+            </div>
+        </div>
+    @endif
     </div>
 </body>
+</html>
 @include('layout.script')
 @section('js')
 @show

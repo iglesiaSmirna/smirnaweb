@@ -147,6 +147,8 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+		'Barryvdh\DomPDF\ServiceProvider',
+
 	],
 
 	/*
@@ -197,7 +199,7 @@ return [
 
 		'Form' => 'Collective\Html\FormFacade',
 		'Html' => 'Collective\Html\HtmlFacade',
-		'BrowserDetect' => 'hisorange\BrowserDetect\Facade\Parser',
+		'PDF' => 'Barryvdh\DomPDF\Facade',
 
 	],
 
