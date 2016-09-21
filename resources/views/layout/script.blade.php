@@ -21,4 +21,4 @@
 
     ga('create', 'UA-59961295-2', 'auto');
     ga('send', 'pageview');
-</scr   ipt>
+</script>

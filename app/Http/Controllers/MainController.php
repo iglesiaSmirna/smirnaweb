@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Barryvdh\DomPDF\PDF;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -28,6 +29,7 @@ class MainController extends Controller
 
     public function redirectUrl (Request $request)
     {
+        $hoy = Carbon::now();
         $seccion = $request->seccion;
         $yy      = $request->yy;
         $vista  = $request->vista;
@@ -53,26 +55,33 @@ class MainController extends Controller
 
                 if ($articulo->estado)
                 {
+                    $incremento = DB::table('tb_articulo')->where('id',$articulo->id)
+                        ->increment('visitas', 1, ['fecha_visita' => $hoy]);
+
+                    $pagTitle  = ucfirst(strtolower($articulo->tittle));
+                    $tituloPag = ucfirst(strtolower($articulo->titulo));
+
                     return view($seccion.'.'.$vista,get_defined_vars());
                 }
                 else
                 {
-                    return redirect(url('/')); // NO EXISTE EL ARTICULO
+                    return view('errors.error',get_defined_vars());
                 }
             }
             else
             {
-                return redirect(url('/')); // NO HAY SECCIONES PARA ESA URL
+                return view('errors.error',get_defined_vars());
             }
         }
         else
         {
-            return redirect(url('/')); // LA SECCION NO ESTA DISPONIBLE...
+            return view('errors.error',get_defined_vars());
         }
     }
 
     public function download(Request $request)
     {
+        $hoy = Carbon::now();
         $seccion = $request->seccion;
         $yy      = $request->yy;
         $vista  = $request->vista;
@@ -98,56 +107,47 @@ class MainController extends Controller
 
                 if ($articulo->estado)
                 {
+                    DB::table('tb_articulo')->where('id',$articulo->id)
+                        ->increment('descargas', 1, ['fecha_descarga' => $hoy]);
 
                     $view =  \View::make($seccion.'.'.$vista, get_defined_vars())->render();
                     $pdf = \App::make('dompdf.wrapper');
                     $pdf->loadHTML($view);
 
-                    //$pdf = \PDF::loadView($seccion.'.'.$vista, get_defined_vars());
+                    //return $pdf->stream($vista.'.pdf');
 
-                    return $pdf->stream($vista.'.pdf');
-
-                    //return $pdf->download($vista.'.pdf');
-
-                    //return view($seccion.'.'.$vista,get_defined_vars());
+                    return $pdf->download($vista.'.pdf');
                 }
                 else
                 {
-                    return redirect(url('/')); // NO EXISTE EL ARTICULO
+                    return view('errors.error',get_defined_vars());
                 }
             }
             else
             {
-                return redirect(url('/')); // NO HAY SECCIONES PARA ESA URL
+                return view('errors.error',get_defined_vars());
             }
         }
         else
         {
-            return redirect(url('/')); // LA SECCION NO ESTA DISPONIBLE...
+            return view('errors.error',get_defined_vars());
         }
-    }
-
-    public function pruebadb ()
-    {
-        $query = DB::table('cat_secciones')->get();
-        dd($query);
-        return 'wow';
     }
 
     public function peticion (Request $request)
     {
+        $ipvisitante = $_SERVER["REMOTE_ADDR"];
+
         $nombre = $request->nombre;
         $email = $request->email;
         $telefono = $request->telefono;
         $peticion = $request->peticion;
-        $ip       = '1.2.3.4';
+        $ip       = isset($ipvisitante) ? $ipvisitante : 'xx.xx.xx.xx' ;
         $telefono = isset($telefono) ? $telefono : '';
 
         $query = DB::table('tb_peticiones')->insert([
             ['nombre' => $nombre, 'correo' => $email, 'telefono'=>$telefono, 'peticion'=>$peticion, 'ip'=>$ip]
         ]);
-
-        dd($query);
 
         return 'ok';
     }
@@ -211,12 +211,14 @@ class MainController extends Controller
             if ($i->vista == $vista && $i->yy = $yy && $i->estado == 1)
             {
                 $response = [
-                    'estado'=>true,
-                    'id'=>$i->id,
-                    'titulo'=>$i->titulo,
-                    'tittle'=>$i->tittle,
-                    'visitas'=>$i->visitas,
-                    'descargas'=>$i->descargas,
+                    'estado'        =>true,
+                    'id'            =>$i->id,
+                    'titulo'        =>$i->titulo,
+                    'tittle'        =>$i->tittle,
+                    'visitas'       =>$i->visitas,
+                    'descargas'     =>$i->descargas,
+                    'fecha_visita'  =>$i->fecha_visita,
+                    'fecha_descarga'=>$i->fecha_descarga
                 ];
                 break;
             }
@@ -264,7 +266,7 @@ class MainController extends Controller
     public function getSeccion($id_seccion)
     {
         $query = DB::table('tb_articulo')
-            ->select('id','vista','titulo','tittle',DB::raw('extract(YEAR from fecha_publicacion) yy'),'visitas','descargas','estado')
+            ->select('id','vista','titulo','tittle',DB::raw('extract(YEAR from fecha_publicacion) yy'),'visitas','descargas','estado','fecha_visita','fecha_descarga')
             ->where('id_seccion',$id_seccion)
             ->orderby('fecha_publicacion','desc')
             ->get();

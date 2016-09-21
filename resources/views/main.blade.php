@@ -19,7 +19,7 @@
         <div class="col-md-3 col-sm-6 col-xs-6">
             <a href="#index-vision">
                 {!! Html::image('images/new_icon01.png', 'vision', array('class' => 'img-responsive')) !!}
-                <p>{!!($eng) ? 'Vision' : 'Visi&oacute;n'!!}</p>
+                <p>{!!($eng) ? 'View' : 'Visi&oacute;n'!!}</p>
             </a>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -49,7 +49,7 @@
             <div class="titulo">Asamblea de Dios Smirna</div>
             <div class="subtitulo">
                 @if(isset($eng)&&$eng)
-                    Dirección en Inglés
+                    4a. Av. 1-02 Zona 1. Chimaltenango, Guatemala.
                 @else
                     4a. Av. 1-02 Zona 1. Chimaltenango, Guatemala.
                 @endif
@@ -61,19 +61,19 @@
             <br>
             @if(isset($eng)&&$eng)
                 <div class="subtitulo">Our vision</div>
-                <div class="parrafo">Visión en inglés...</div>
-                <br>
+                <div class="parrafo">Reach and develop people through the gospel message to expand God´s Kingdom.</div>
+                <br><br>
             @else
                 <div class="subtitulo">Nuestra visi&oacute;n</div>
                 <div class="parrafo">Alcanzar y desarrollar personas por medio del mensaje del evangelio para ensanchar el Reino de Dios.</div>
-                <br>
+                <br><br>
             @endif
         </div>
         <div class="col-md-5 col-sm-5 col-xs-10 col-xs-offset-1">
             <br>
             @if(isset($eng)&&$eng)
-                <div class="subtitulo">Mision</div>
-                <div class="parrafo">Misión en inglés...</div>
+                <div class="subtitulo">Mission</div>
+                <div class="parrafo">Our mission is described in a five-step process:</div>
                 <br><br>
             @else
                 <div class="subtitulo">Misi&oacute;n</div>
@@ -99,41 +99,41 @@
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
                         @if(isset($eng)&&$eng)
-                            {!! Html::image('images/eng_carrs01.png', 'Alcanzar') !!}
+                            {!! Html::image('images/carrousel01.jpg', 'Alcanzar') !!}
                         @else
-                            {!! Html::image('images/carrousel01.png', 'Alcanzar') !!}
+                            {!! Html::image('images/carrusel01.jpg', 'Alcanzar') !!}
                         @endif
 
                     </div>
                     <div class="item">
                         @if(isset($eng)&&$eng)
-                            {!! Html::image('images/eng_carrs02.png', 'Consolidar') !!}
+                            {!! Html::image('images/carrousel02.jpg', 'Consolidar') !!}
                         @else
-                            {!! Html::image('images/carrousel02.png', 'Consolidar') !!}
+                            {!! Html::image('images/carrusel02.jpg', 'Consolidar') !!}
                         @endif
 
                     </div>
                     <div class="item">
                         @if(isset($eng)&&$eng)
-                            {!! Html::image('images/eng_carrs03.png', 'Discipular') !!}
+                            {!! Html::image('images/carrousel03.jpg', 'Discipular') !!}
                         @else
-                            {!! Html::image('images/carrousel03.png', 'Discipular') !!}
+                            {!! Html::image('images/carrusel03.jpg', 'Discipular') !!}
                         @endif
 
                     </div>
                     <div class="item">
                         @if(isset($eng)&&$eng)
-                            {!! Html::image('images/eng_carrs04.png', 'Desarrollar') !!}
+                            {!! Html::image('images/carrousel04.jpg', 'Desarrollar') !!}
                         @else
-                            {!! Html::image('images/carrousel04.png', 'Desarrollar') !!}
+                            {!! Html::image('images/carrusel04.jpg', 'Desarrollar') !!}
                         @endif
 
                     </div>
                     <div class="item">
                         @if(isset($eng)&&$eng)
-                            {!! Html::image('images/eng_carrs05.png', 'Enviar') !!}
+                            {!! Html::image('images/carrousel05.jpg', 'Enviar') !!}
                         @else
-                            {!! Html::image('images/carrousel05.png', 'Enviar') !!}
+                            {!! Html::image('images/carrusel05.jpg', 'Enviar') !!}
                         @endif
 
                     </div>
@@ -150,22 +150,24 @@
             <br>
             @if(isset($eng)&&$eng)
                 <div class="titulo">
-                    <i class="fa fa-book" aria-hidden="true"></i> Titulo inglés
+                    <i class="fa fa-book" aria-hidden="true"></i> {!! isset($eng)&&$eng ? 'Verse of the week' : 'Vers&iacute;culo del Mes' !!}
+
                 </div>
-                <div class="parrafo">
-                    Versículo en inglés
+                <div class="subtitulo">
                     <br>
-                    Texto en inglés
+                    But the Lord is faithful, who shall stablish you, and keep you from evil.
+                    <br>
+                    2 Thessalonians 3.3 KJV
                 </div>
             @else
                 <div class="titulo">
                     <i class="fa fa-book" aria-hidden="true"></i> Vers&iacute;culo del Mes
                 </div>
-                <div class="parrafo">
+                <div class="subtitulo">
                     <br>
-                    Si todo su cuerpo est&aacute; iluminado, y no hay en &eacute;l ninguna parte oscura, entonces la vida de ustedes alumbrar&aacute; en todos lados, como cuando una l&aacute;mpara los ilumina con su luz.
+                    Pero el Señor Jesucristo les dará una firme confianza y los protegerá del mal, porque él siempre cumple lo que dice.
                     <br>
-                    San Lucas 11.36 TLA
+                    II Tesalonisences 3.3 TLA
                 </div>
             @endif
         </div>
@@ -191,8 +193,8 @@
                 </div>
                 <div class="col-md-8 col-sm-7 col-xs-9">
                     @if(isset($eng)&&$eng)
-                        <div class="subtitulo">Título Inglés</div>
-                        <div class="parrafo">Hora Inglés</div>
+                        <div class="subtitulo">Sunday school</div>
+                        <div class="parrafo">Sunday 9:00 am</div>
                     @else
                         <div class="subtitulo">Escuela Dominical</div>
                         <div class="parrafo">Domingo 9:00 am</div>
@@ -208,8 +210,8 @@
                 </div>
                 <div class="col-md-8 col-sm-7 col-xs-9">
                     @if(isset($eng)&&$eng)
-                        <div class="subtitulo">Título Inglés</div>
-                        <div class="parrafo">Hora Inglés</div>
+                        <div class="subtitulo">Prayer Service</div>
+                        <div class="parrafo">Tuesday 7:30 pm</div>
                     @else
                         <div class="subtitulo">Servicio de Oraci&oacute;n</div>
                         <div class="parrafo">Martes 7:30 pm</div>
@@ -229,8 +231,8 @@
                 </div>
                 <div class="col-md-8 col-sm-7 col-xs-9">
                     @if(isset($eng)&&$eng)
-                        <div class="subtitulo">Título Inglés</div>
-                        <div class="parrafo">Hora Inglés</div>
+                        <div class="subtitulo">Women's Council</div>
+                        <div class="parrafo">Wednesday 3:00 pm</div>
                     @else
                         <div class="subtitulo">Concilio Femenil</div>
                         <div class="parrafo">Mi&eacute;rcoles 3:00 pm</div>
@@ -246,8 +248,8 @@
                 </div>
                 <div class="col-md-8 col-sm-7 col-xs-9">
                     @if(isset($eng)&&$eng)
-                        <div class="subtitulo">Título Inglés</div>
-                        <div class="parrafo">Hora Inglés</div>
+                        <div class="subtitulo">Fraternity Boys</div>
+                        <div class="parrafo">Wednesday 7:30 pm</div>
                     @else
                         <div class="subtitulo">Fraternidad de Varones</div>
                         <div class="parrafo">Mi&eacute;rcoles 7:30 pm</div>
@@ -267,8 +269,8 @@
                 </div>
                 <div class="col-md-8 col-sm-7 col-xs-9">
                     @if(isset($eng)&&$eng)
-                        <div class="subtitulo">Título Inglés</div>
-                        <div class="parrafo">Hora Inglés</div>
+                        <div class="subtitulo">Youth Society</div>
+                        <div class="parrafo">Saturday 7:30 pm</div>
                     @else
                         <div class="subtitulo">Sociedad de J&oacute;venes</div>
                         <div class="parrafo">S&aacute;bado 7:30 pm</div>
@@ -284,8 +286,8 @@
                 </div>
                 <div class="col-md-8 col-sm-7 col-xs-9">
                     @if(isset($eng)&&$eng)
-                        <div class="subtitulo">Título Inglés</div>
-                        <div class="parrafo">Hora Inglés</div>
+                        <div class="subtitulo">Regular service</div>
+                        <div class="parrafo">Sunday 4:30 pm</div>
                     @else
                         <div class="subtitulo">Servicio Regular</div>
                         <div class="parrafo">Domingo 4:30 pm</div>
@@ -305,94 +307,42 @@
         </div>
     </div>
     <div class="row" style="color:white;">
-        <div class="col-md-4 col-sm-4 col-xs-12">
+
+        <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12 col-xs-offset-0">
             <div class="row">
                 <br>
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    {!! Html::image('images/devocional/main.jpg', 'Devocional', array('class' => 'img-responsive')) !!}
-                    <br>
+                    <div class="parrafo" style="color:white;">{!! isset($eng)&&$eng ? 'Studies' : 'Estudios' !!}</div>
+                    {!! Html::image('images/estudio/fidelidad-servicios.jpg', 'Estudios', array('class' => 'img-responsive')) !!}
                     @if((isset($eng)&&$eng))
-                        <div class="parrafo" style="color:white;">Título Inglés</div>
                         <div class="diminuto" style="color:white; text-align: justify;">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            <br>
+                            FAITHFUL SERVICE
                             <br><br>
-                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
+                            Caleb, as a Biblical figure, presented a strong character. Moses as an example of faithful leader, Caleb was a faithful follower, in fact, his most outstanding quality is that he followed God "dutifully" in everything.
                         </div>
                     @else
-                        <div class="parrafo" style="color:white;">Devocional</div>
                         <div class="diminuto" style="color:white; text-align: justify;">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                            <br><br>
-                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
+                            <br>
+                            FIDELIDAD EN EL SERVICIO
+                            <br>
+                            Pocos personajes bíblicos muestran un carácter mas firme que Caleb. Si Moisés fue el ejemplo de líder fiel, Caleb fue el seguidor fiel, en efecto, su cualidad más sobresaliente es que siguió a Dios “cumplidamente” esto es, en todo.
                         </div>
                     @endif
                     <br>
-                    {!! Html::link(url('/devocional/2016/mi-devocional?lang='.((isset($eng)&&$eng)?'en':'es')), 'VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
+                    {!! Html::link(url('/estudio/2016/fidelidad-servicio?lang='.((isset($eng)&&$eng)?'en':'es')), isset($eng)&&$eng ? 'SEE MORE' : 'VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
                     <br><br>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="row">
-                <br>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    {!! Html::image('images/devocional/main.jpg', 'Devocional', array('class' => 'img-responsive')) !!}
-                    <br>
-                    @if((isset($eng)&&$eng))
-                        <div class="parrafo" style="color:white;">Título Inglés</div>
-                        <div class="diminuto" style="color:white; text-align: justify;">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                            <br><br>
-                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
-                        </div>
-                    @else
-                        <div class="parrafo" style="color:white;">Estudios</div>
-                        <div class="diminuto" style="color:white; text-align: justify;">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                            <br><br>
-                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
-                        </div>
-                    @endif
-                    <br>
-                    {!! Html::link(url('/estudio/2016/mi-estudio?lang='.((isset($eng)&&$eng)?'en':'es')), 'VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
-                    <br><br>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="row">
-                <br>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    {!! Html::image('images/devocional/main.jpg', 'Devocional', array('class' => 'img-responsive')) !!}
-                    <br>
-                    @if((isset($eng)&&$eng))
-                        <div class="parrafo" style="color:white;">Título Inglés</div>
-                        <div class="diminuto" style="color:white; text-align: justify;">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                            <br><br>
-                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
-                        </div>
-                    @else
-                        <div class="parrafo" style="color:white;">C&aacute;psulas</div>
-                        <div class="diminuto" style="color:white; text-align: justify;">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                            <br><br>
-                            Dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
-                        </div>
-                    @endif
-                    <br>
-                    {!! Html::link(url('/capsula/2016/mi-capsula?lang='.((isset($eng)&&$eng)?'en':'es')), 'VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
-                    <br><br>
-                </div>
-            </div>
-        </div>
+
     </div>
 
     {{-- FRASES DE LIDERAZGO --}}
     <div class="row blanco">
         <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
             <hr>
-            <div class="titulo">FRASE DE LIDERAZGO</div>
+            <div class="titulo">{!! isset($eng)&&$eng ? 'QUOTATION OF LEADERSHIP' : 'FRASE DE LIDERAZGO' !!}</div>
             <div id="carousel-frases" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -406,7 +356,7 @@
                         <br>
                         <div class="div-frase">
                         @if(isset($eng)&&$eng)
-                            <div class="subtitulo">El liderazgo es una decisión que usted toma, no un lugar donde usted se sienta.</div>
+                            <div class="subtitulo">Leadership is a decision you make, not a place where you sit.</div>
                             <div class="parrafo">John C. Maxwell</div>
                         @else
                             <div class="subtitulo">El liderazgo es una decisión que usted toma, no un lugar donde usted se sienta.</div>
@@ -418,7 +368,7 @@
                         <br>
                         <div class="div-frase">
                         @if(isset($eng)&&$eng)
-                            <div class="subtitulo">La verdadera medida de liderazgo es la Influencia</div>
+                            <div class="subtitulo">The true measure of leadership is influence.</div>
                             <div class="parrafo">John C. Maxwell</div>
                         @else
                             <div class="subtitulo">La verdadera medida de liderazgo es la Influencia</div>
@@ -447,7 +397,7 @@
         <div class="col-md-3 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1">
             <br><p style="color: #4377DD; font-weight: bold">{!! (isset($eng)&&$eng) ? 'SOCIAL' : 'REDES SOCIALES' !!}</p><br>
             <div class="row redes-footer">
-                <a href="http://twitter.com" target="_blank">
+                <a href="http://twitter.com/SmirnaGuatemala" target="_blank">
                     <div class="col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
                         {!! Html::image('images/icon_twitter.png', 'twitter', array('class' => 'img-responsive', 'style'=>'max-height: 35px; right: 0; position: absolute;')) !!}
                     </div>
@@ -458,7 +408,7 @@
             </div>
             <hr>
             <div class="row redes-footer">
-                <a href="http://www.facebook.com" target="_blank">
+                <a href="http://www.facebook.com/Smirna.Guatemala" target="_blank">
                     <div class="col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
                         {!! Html::image('images/icon_facebook.png', 'facebook', array('class' => 'img-responsive', 'style'=>'max-height: 35px; right: 0; position: absolute;')) !!}
                     </div>
@@ -469,7 +419,7 @@
             </div>
             <hr>
             <div class="row redes-footer">
-                <a href="http://instagram.com" target="_blank">
+                <a href="http://instagram.com/SmirnaGuatemala" target="_blank">
                     <div class="col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
                         {!! Html::image('images/icon_instagram.png', 'instagram', array('class' => 'img-responsive', 'style'=>'max-height: 35px; right: 0; position: absolute;')) !!}
                     </div>
@@ -485,14 +435,14 @@
                         {!! Html::image('images/icon_oracion.png', 'oracion', array('class' => 'img-responsive', 'style'=>'max-height: 35px; right: 0; position: absolute;')) !!}
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-9" style="padding-top: 12px;">
-                        Oraci&oacute;n
+                        {!! isset($eng)&&$eng ? 'Prayer' : 'Oraci&oacute;n' !!}
                     </div>
                 </a>
             </div>
             <br>
         </div>
         <div class="col-md-3 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-            <br><p style="color: #4377DD; font-weight: bold">{!! (isset($eng)&&$eng) ? 'CONTACT' : 'CONTACTO' !!}</p><br>
+            <br><p style="color: #4377DD; font-weight: bold">{!! (isset($eng)&&$eng) ? 'CONTACTO' : 'CONTACTO' !!}</p><br>
             <div>
                 <p>
                     <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;&nbsp;info@iglesiasmirna.org

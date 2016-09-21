@@ -115,7 +115,7 @@ body {
 #compartir {
     font-size: 120%;
 }
-
+/*
 #compartir-pdf a{
     color: red;
 }
@@ -139,7 +139,7 @@ body {
     color: red;
     text-decoration: none;
 }
-
+*/
 /* Responsive Screen */
 @media screen and (max-width: 768px) and (orientation: landscape) {
     #web-header {

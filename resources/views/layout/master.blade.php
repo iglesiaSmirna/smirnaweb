@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,6 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta name="language" content="en"/>
 
-    <link rel="shortcut icon" href="images/myicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="{!! asset('images/favicon.ico')!!}" type="image/x-icon">
     <link rel="icon" href="{!! asset('images/favicon.ico')!!}" type="image/x-icon">
 
@@ -31,7 +29,7 @@
                 <br><br>
                 <div class="diminuto" style="color: white;">
                     &reg; Asamblea de Dios Smirna. 2016 &nbsp;&nbsp;|&nbsp;&nbsp;
-                    {!! (isset($eng)&&$eng) ? 'All Right Reserved' : 'Todos los Derechos Reservados'!!}
+                    {!! (isset($eng)&&$eng) ? 'All rights reserved' : 'Todos los Derechos Reservados'!!}
                 </div>
                 <br><br>
             </div>

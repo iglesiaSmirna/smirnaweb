@@ -19,51 +19,70 @@
 
             <div class="col-md-2 col-md-offset-5 col-sm-3 col-sm-offset-3 col-xs-12" style="text-align: right; padding-top:40px; padding-bottom: 10px">
                 <a href="{!! url('/')!!}{!! (isset($eng)&&$eng) ? '?lang=en' : '?lang=es' !!} ">
-                    <div class="parrafo"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> {!! (isset($eng)&&$eng) ? 'HOME' : 'INICIO' !!}</div>
+                    <div class="parrafo"> {!! (isset($eng)&&$eng) ? 'HOME' : 'INICIO' !!} <i class="fa fa-home" aria-hidden="true"></i></div>
                 </a>
             </div>
         </div>
     @endif
     {{-- TITULO E IMAGEN--}}
     <div class="row">
-        {!! (isset($isWeb)&&$isWeb) ? '<br>' : '' !!}
-        <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 blanco {!! (isset($isWeb)&&$isWeb) ? 'supertitulo' : 'titulo' !!}" style="text-align: center;">
+        @if(isset($isWeb)&&$isWeb)
+            <br>
+        @endif
+        <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1 blanco {!! (isset($isWeb)&&$isWeb) ? 'supertitulo' : 'titulo' !!}" style="text-align: center;">
             {!! (isset($eng)&&$eng) ? $articulo->tittle : $articulo->titulo !!}
         </div>
-        <div class="col-md-5 col-sm-5 col-xs-12">
+        <div class="col-md-5 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-8 col-xs-offset-2">
             {!! Html::image('images/devocional/main.jpg', 'Alcanzar', array('class' => 'img-responsive')) !!}
         </div>
     </div>
     {{-- CONTENIDO--}}
     <div class="row">
-        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 {!! (isset($isWeb)&&$isWeb) ? 'parrafo' : 'diminuto' !!} blanco" style="text-align: justify">
+        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0 {!! (isset($isWeb)&&$isWeb) ? 'parrafo' : 'diminuto' !!} blanco" style="text-align: justify   ">
             <hr>
             @if(isset($eng)&&$eng)
-                Contenido inglés...
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Ut varius tincidunt libero. Phasellus dolor. Maecenas vestibulum mollis
             @else
-                Contenido español...
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Ut varius tincidunt libero. Phasellus dolor. Maecenas vestibulum mollis
             @endif
         </div>
     </div>
+
+    {{-- VISITAS Y FECHA DE ULTIMA--}}
+    @if(isset($isWeb)&&$isWeb)
+        <div class="row">
+
+
+        </div>
+    @endif
 
     {{-- DESCARGA Y COMPARTIR--}}
     @if(isset($isWeb)&&$isWeb)
         <div class="row" id="compartir">
             <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
                 <hr>
-                <div class="col-md-2 col-sm-4 col-xs-12" style="text-align: right;">
+                <div class="col-md-6 col-sm-12 col-xs-12 diminuto blanco" style="text-align: left;">
+                    <br>
+                    @if(isset($eng)&&$eng)
+                        <i class="fa fa-line-chart" aria-hidden="true"></i> Visits: {!! $articulo->visitas !!}&nbsp;&nbsp;&nbsp; <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Last visit: {!! $articulo->fecha_visita !!}
+                    @else
+                        <i class="fa fa-line-chart" aria-hidden="true"></i> Visitas: {!! $articulo->visitas !!}&nbsp;&nbsp;&nbsp; <i class="fa fa-calendar-check-o" aria-hidden="true"></i> &Uacute;ltima visita: {!! $articulo->fecha_visita !!}
+                    @endif
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6" style="text-align: right;">
                     <br>
                     <div class="fb-share-button" data-href="http://www.iglesiasmirna.org" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.iglesiasmirna.org%2F&amp;src=sdkpreparse"> {!! (isset($eng)&&$eng) ? 'Share' : 'Compartir' !!} <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a></div>
                 </div>
-                <div class="col-md-2 col-sm-4 col-xs-12" style="text-align: right;">
+                <div class="col-md-2 col-sm-4 col-xs-6" style="text-align: right; padding-top: 3px;">
                     <br>
                     <a href="https://twitter.com/share" class="twitter-share-button"> Tweet <i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i> </a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                 </div>
-                <div class="col-md-4 col-md-offset-4 col-sm-4 col-xs-12" style="text-align: right;"  id="compartir-pdf">
+                <div class="col-md-2 col-sm-4 col-xs-12" style="text-align: right;" id="compartir-pdf">
                     <br>
-                    <a href="{!! url('download/'.$seccion.'/'.$yy.'/'.$vista.'?lang='.(isset($eng)&&$eng ? 'en' : 'es')) !!}">
+                    <a href="{!! url('download/'.$seccion.'/'.$yy.'/'.$vista.'?lang='.(isset($eng)&&$eng ? 'en' : 'es')) !!}" class="btn btn-danger btn-sm">
+                        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp;&nbsp;
                         {!! (isset($eng)&&$eng) ? 'Download ('.$articulo->descargas.')' : 'Descargar ('.$articulo->descargas.')' !!}
-                        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+
                     </a>
                 </div>
             </div>
@@ -74,8 +93,8 @@
     {{-- LISTA DE OTROS ARTICULOS--}}
     @if(isset($isWeb)&&$isWeb)
         @if(isset($query)&&count($query)>1)
-            <hr>
             <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+                <hr>
                 <table class="table table-striped" id="tabla-articulos">
                     <thead>
                     <tr>
@@ -155,3 +174,65 @@
         });
     </script>
 @stop
+
+{{--
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="row">
+                <br>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    {!! Html::image('images/devocional/main.jpg', 'Devocional', array('class' => 'img-responsive')) !!}
+                    <br>
+                    @if((isset($eng)&&$eng))
+                        <div class="parrafo" style="color:white;">Título Inglés</div>
+                        <div class="diminuto" style="color:white; text-align: justify;">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            <br><br>
+                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
+                        </div>
+                    @else
+                        <div class="parrafo" style="color:white;">Devocional</div>
+                        <div class="diminuto" style="color:white; text-align: justify;">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            <br><br>
+                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
+                        </div>
+                    @endif
+                    <br>
+                    {!! Html::link(url('/devocional/2016/mi-devocional?lang='.((isset($eng)&&$eng)?'en':'es')), 'VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
+                    <br><br>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="row">
+                <br>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    {!! Html::image('images/devocional/main.jpg', 'Devocional', array('class' => 'img-responsive')) !!}
+                    <br>
+                    @if((isset($eng)&&$eng))
+                        <div class="parrafo" style="color:white;">Título Inglés</div>
+                        <div class="diminuto" style="color:white; text-align: justify;">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            <br><br>
+                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
+                        </div>
+                    @else
+                        <div class="parrafo" style="color:white;">C&aacute;psulas</div>
+                        <div class="diminuto" style="color:white; text-align: justify;">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                            <br><br>
+                            Dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate.
+                        </div>
+                    @endif
+                    <br>
+                    {!! Html::link(url('/capsula/2016/mi-capsula?lang='.((isset($eng)&&$eng)?'en':'es')), 'VER MAS', array('class'=>'btn btn-success btn-sm col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6')) !!}
+                    <br><br>
+                </div>
+            </div>
+        </div>
+        --}}
